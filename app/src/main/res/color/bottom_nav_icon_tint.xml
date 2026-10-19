@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Saat diklik/aktif -->
+    <item android:color="#00F2FE" android:state_checked="true" />
+    <!-- Saat TIDAK diklik/tidak aktif: Tetap Cyan Terang Khas Website -->
+    <item android:color="#00F2FE" />
+</selector>

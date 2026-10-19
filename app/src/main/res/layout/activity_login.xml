@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#131129"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <!-- Judul -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="WELCOME BACK"
+        android:textColor="#00F2FE"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/poppins_extra_bold" />
+
+    <!-- Subjudul -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Silakan masuk untuk akses Warnet Gaming"
+        android:textColor="#A0A0C0"
+        android:textSize="14sp" />
+
+    <!-- Username -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:hint="Username"
+        app:boxBackgroundMode="filled"
+        app:boxBackgroundColor="#201B42"
+        app:boxStrokeColor="#00F2FE"
+        app:hintTextColor="#00F2FE">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:textColor="@android:color/white" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Password -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Password"
+        app:boxBackgroundMode="filled"
+        app:boxBackgroundColor="#201B42"
+        app:boxStrokeColor="#00F2FE"
+        app:hintTextColor="#00F2FE"
+        app:endIconMode="password_toggle"
+        app:endIconTint="#00F2FE">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:textColor="@android:color/white" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Tombol Login -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:padding="12dp"
+        android:text="LOGIN"
+        android:textColor="#131129"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:backgroundTint="#00F2FE"
+        app:cornerRadius="12dp" />
+
+</LinearLayout>

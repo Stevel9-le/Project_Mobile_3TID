@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#131129"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center_horizontal">
+
+    <!-- Judul Profil Developer -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PROFIL DEVELOPER"
+        android:textColor="#00F2FE"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/poppins_extra_bold" />
+
+    <!-- Logo Developer -->
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/profile"
+        android:scaleType="centerCrop"
+        android:contentDescription="Foto Profile Developer" />
+
+    <!-- Nama Developer -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Nama: Steven Le"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp" />
+
+    <!-- Sosial Media Developer -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Sosmed: @stevenle24"
+        android:textColor="#A0A0C0"
+        android:textSize="14sp" />
+
+    <!-- Hobi Developer -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Hobi: Coding &amp; Gaming"
+        android:textColor="#A0A0C0"
+        android:textSize="14sp" />
+
+    <!-- Kekuatan Terbesar Developer -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="Kekuatan Terbesar: Pantang Menyerah &amp; Problem Solving"
+        android:textColor="#00F2FE"
+        android:textSize="14sp"
+        android:textStyle="italic" />
+
+</LinearLayout>

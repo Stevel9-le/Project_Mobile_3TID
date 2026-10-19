@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">fmi-pringles</string>
+    <string name="btn_my_project">My Project</string>
+    <string name="snack_title">Pringles Original</string>
+    <string name="snack_nutrition">Komposisi Gizi (per 30g):\n- Tenaga Total: 150 kcal\n- Lemak Total: 9g\n- Protein: 1g\n- Karbohidrat Total: 16g\n- Garam/Natrium: 150mg</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
