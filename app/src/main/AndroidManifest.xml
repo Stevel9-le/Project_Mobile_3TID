@@ -22,6 +22,7 @@
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -53,6 +54,14 @@
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".Project.DeveloperActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Project.RegisterActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Project.OtpActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
     </application>

@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.sjr_pringles.Project.MainActivityProject
+import com.example.sjr_pringles.Project.RegisterActivity // Import RegisterActivity dari sub-package Project
 import com.example.sjr_pringles.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
@@ -26,7 +27,7 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // 2. Simpan status isLogin = true saat tombol Login diklik
+        // 2. Event Klik Tombol Login
         binding.btnLogin.setOnClickListener {
             val username = binding.etUsername.text.toString().trim()
             val password = binding.etPassword.text.toString().trim()
@@ -45,6 +46,12 @@ class LoginActivity : AppCompatActivity() {
             } else {
                 Toast.makeText(this, "Isi username dan password!", Toast.LENGTH_SHORT).show()
             }
+        }
+
+        // 3. TAMBAHAN: Event Klik Tombol/Teks Register untuk Pindah ke RegisterActivity
+        binding.btnToRegister.setOnClickListener {
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
         }
     }
 }

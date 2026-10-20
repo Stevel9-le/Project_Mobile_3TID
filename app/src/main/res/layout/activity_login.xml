@@ -12,11 +12,11 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_extra_bold"
         android:text="WELCOME BACK"
         android:textColor="#00F2FE"
         android:textSize="26sp"
-        android:textStyle="bold"
-        android:fontFamily="@font/poppins_extra_bold" />
+        android:textStyle="bold" />
 
     <!-- Subjudul -->
     <TextView
@@ -33,8 +33,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:hint="Username"
-        app:boxBackgroundMode="filled"
         app:boxBackgroundColor="#201B42"
+        app:boxBackgroundMode="filled"
         app:boxStrokeColor="#00F2FE"
         app:hintTextColor="#00F2FE">
 
@@ -53,12 +53,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:hint="Password"
-        app:boxBackgroundMode="filled"
         app:boxBackgroundColor="#201B42"
+        app:boxBackgroundMode="filled"
         app:boxStrokeColor="#00F2FE"
-        app:hintTextColor="#00F2FE"
         app:endIconMode="password_toggle"
-        app:endIconTint="#00F2FE">
+        app:endIconTint="#00F2FE"
+        app:hintTextColor="#00F2FE">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etPassword"
@@ -82,5 +82,17 @@
         android:textStyle="bold"
         app:backgroundTint="#00F2FE"
         app:cornerRadius="12dp" />
+
+    <!-- Tombol Pindah ke Halaman Registrasi (TAMBAHAN) -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnToRegister"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Belum punya akun? Daftar"
+        android:textAllCaps="false"
+        android:textColor="#00F2FE"
+        android:textSize="14sp" />
 
 </LinearLayout>
