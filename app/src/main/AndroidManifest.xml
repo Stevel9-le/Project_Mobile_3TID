@@ -2,8 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- Izin Akses Internet -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <application
         android:allowBackup="true"
@@ -15,55 +18,59 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Sjrpringles">
 
-        <!-- 1. SPLASH ACTIVITY (Halaman Pertama/Launcher) -->
+        <!-- 1. SPLASH ACTIVITY (Halaman Pertama / Launcher) -->
         <activity
             android:name=".Project.SplashActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <!-- 2. LOGIN ACTIVITY (Package: com.example.sjr_pringles.LoginActivity) -->
+        <!-- 2. FLOW REGISTRASI & AUTHENTICATION -->
         <activity
             android:name=".LoginActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
 
-        <!-- 3. MAIN ACTIVITY PROJECT -->
+        <activity
+            android:name=".Project.RegisterActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".Project.OtpActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- 3. HALAMAN UTAMA & PENDUKUNG -->
         <activity
             android:name=".Project.MainActivityProject"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
 
-        <!-- Activity pendukung lainnya -->
-        <activity
-            android:name=".MainActivity"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".Project.WebViewActivity"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".MainActivityResult"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".Project.DeveloperActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+
         <activity
-            android:name=".Project.RegisterActivity"
+            android:name=".Project.WebViewActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+
         <activity
-            android:name=".Project.OtpActivity"
+            android:name=".MainActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".MainActivityResult"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
     </application>
 
 </manifest>

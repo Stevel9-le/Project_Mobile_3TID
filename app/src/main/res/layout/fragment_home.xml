@@ -47,10 +47,46 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="28dp"
+                android:layout_marginBottom="20dp"
                 android:text="Client Self-Service Portal"
                 android:textColor="#8F8FA8"
                 android:textSize="13sp" />
+
+            <!-- CARD COMPONENT FITUR 1: BILLING COUNTDOWN TIMER -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                app:cardBackgroundColor="#171530"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sisa Billing Main"
+                        android:textColor="#8F8FA8"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tvBillingTimer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="00:00:00"
+                        android:textColor="#00F2FE"
+                        android:textSize="26sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
             <!-- Tombol Booking PC (Compact) -->
             <Button

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0B091A"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#171530"
+        app:title="Top Up Billing iCafe"
+        app:titleTextColor="@android:color/white" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="#171530"
+            app:cardCornerRadius="14dp"
+            app:strokeColor="#28244D"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kalkulator Top Up Billing"
+                    android:textColor="#00F2FE"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <!-- Tombol +/- Jam -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnKurangJam"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:backgroundTint="#EF4444"
+                        android:text="-"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp"
+                        app:cornerRadius="24dp" />
+
+                    <TextView
+                        android:id="@+id/tvJumlahJam"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="1 Jam"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnTambahJam"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:backgroundTint="#10B981"
+                        android:text="+"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp"
+                        app:cornerRadius="24dp" />
+                </LinearLayout>
+
+                <!-- Total Harga -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Total Pembayaran:"
+                    android:textColor="#8F8FA8"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tvTotalHargaBilling"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Rp 5.000"
+                    android:textColor="#00F2FE"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnConfirmTopUp"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="24dp"
+                    android:backgroundTint="#4F46E5"
+                    android:text="Konfirmasi Top Up"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    app:cornerRadius="8dp" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+</LinearLayout>
