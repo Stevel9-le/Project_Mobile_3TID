@@ -19,9 +19,8 @@ import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.setFragmentResultListener
-import com.example.sjr_pringles.Project.Menu.MenuFragment
+import com.example.sjr_pringles.Project.MainActivityProject
 import com.example.sjr_pringles.Project.WebViewActivity
-import com.example.sjr_pringles.R
 import com.example.sjr_pringles.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -32,8 +31,8 @@ class HomeFragment : Fragment() {
     private var countDownTimer: CountDownTimer? = null
     private val CHANNEL_ID = "icafe_billing_channel"
 
-    // Simpan sisa waktu billing dalam milidetik
-    private var remainingTimeMs: Long = 10 * 60 * 1000 // Awal 10 Menit
+    // Simpan sisa waktu billing dalam milidetik (Awal 10 Menit)
+    private var remainingTimeMs: Long = 10 * 60 * 1000L
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -61,7 +60,6 @@ class HomeFragment : Fragment() {
         setFragmentResultListener("request_topup") { _, bundle ->
             val addedHours = bundle.getInt("added_hours", 0)
             if (addedHours > 0) {
-                // Tambahkan waktu tambahan (dalam milidetik)
                 val addedMs = addedHours * 3600 * 1000L
                 remainingTimeMs += addedMs
 
@@ -74,17 +72,11 @@ class HomeFragment : Fragment() {
         }
 
         binding.btnBooking.setOnClickListener {
-            parentFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, BookingFragment())
-                .addToBackStack(null)
-                .commit()
+            (activity as? MainActivityProject)?.bukaHalamanSub(BookingFragment())
         }
 
         binding.btnKantin.setOnClickListener {
-            parentFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, MenuFragment())
-                .addToBackStack(null)
-                .commit()
+            (activity as? MainActivityProject)?.pindahTab(1)
         }
 
         binding.btnWebView.setOnClickListener {
@@ -92,17 +84,14 @@ class HomeFragment : Fragment() {
         }
 
         binding.tvBillingTimer.setOnClickListener {
-            parentFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, QuickBillingFragment())
-                .addToBackStack(null)
-                .commit()
+            (activity as? MainActivityProject)?.bukaHalamanSub(QuickBillingFragment())
         }
     }
 
     private fun startBillingTimer(durationInMillis: Long) {
         countDownTimer = object : CountDownTimer(durationInMillis, 1000) {
             override fun onTick(millisUntilFinished: Long) {
-                remainingTimeMs = millisUntilFinished // Update sisa waktu berjalan
+                remainingTimeMs = millisUntilFinished
                 val hours = (millisUntilFinished / 1000) / 3600
                 val minutes = ((millisUntilFinished / 1000) % 3600) / 60
                 val seconds = (millisUntilFinished / 1000) % 60

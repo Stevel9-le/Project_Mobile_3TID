@@ -66,6 +66,7 @@
                     android:id="@+id/etNomorPC"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:importantForAutofill="no"
                     android:inputType="number"
                     android:textColor="@android:color/white" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -85,6 +86,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="top"
+                    android:importantForAutofill="no"
                     android:inputType="textMultiLine"
                     android:lines="4"
                     android:textColor="@android:color/white" />
@@ -99,6 +101,18 @@
                 android:text="TULIS KELUHAN"
                 android:textColor="#FFFFFF"
                 android:textStyle="bold" />
+
+            <!-- Riwayat Keluhan yang Terkirim -->
+            <TextView
+                android:id="@+id/tvRiwayatKeluhan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:background="#201B42"
+                android:padding="16dp"
+                android:text="Belum ada keluhan yang dikirim."
+                android:textColor="#E0E0FF"
+                android:textSize="14sp" />
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>

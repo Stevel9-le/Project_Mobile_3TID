@@ -1,13 +1,13 @@
 package com.example.sjr_pringles.Project
 
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.example.sjr_pringles.Project.Home.HomeFragment
-import com.example.sjr_pringles.Project.Log.LogFragment
-import com.example.sjr_pringles.Project.Menu.MenuFragment
-import com.example.sjr_pringles.Project.Profile.ProfileFragment
+import androidx.viewpager2.widget.ViewPager2
+import com.example.sjr_pringles.Project.Home.OnBoardingFragment
 import com.example.sjr_pringles.R
 import com.example.sjr_pringles.databinding.ActivityMainProjectBinding
 
@@ -21,46 +21,75 @@ class MainActivityProject : AppCompatActivity() {
         binding = ActivityMainProjectBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Hilangkan tint agar warna asli ikon keluar
         binding.bottomNavigation.itemIconTintList = null
+        binding.viewPagerMain.adapter = MainPagerAdapter(this)
 
-        // Set HomeFragment sebagai fragment default saat pertama kali aplikasi dibuka
         if (savedInstanceState == null) {
-            replaceFragment(HomeFragment())
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.onboarding_container, OnBoardingFragment())
+                .commit()
         }
 
-        // Setup Listener Bottom Navigation dengan Notifikasi Toast
+        binding.viewPagerMain.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+            override fun onPageSelected(position: Int) {
+                super.onPageSelected(position)
+                binding.bottomNavigation.menu.getItem(position).isChecked = true
+            }
+        })
+
         binding.bottomNavigation.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.nav_home -> {
-                    replaceFragment(HomeFragment())
+                    binding.viewPagerMain.currentItem = 0
                     Toast.makeText(this, "Membuka Menu Home", Toast.LENGTH_SHORT).show()
                     true
                 }
                 R.id.nav_menu -> {
-                    replaceFragment(MenuFragment())
+                    binding.viewPagerMain.currentItem = 1
                     Toast.makeText(this, "Membuka Menu Makanan & Minuman", Toast.LENGTH_SHORT).show()
                     true
                 }
                 R.id.nav_log -> {
-                    replaceFragment(LogFragment())
+                    binding.viewPagerMain.currentItem = 2
                     Toast.makeText(this, "Membuka Logbook Keluhan", Toast.LENGTH_SHORT).show()
                     true
                 }
                 R.id.nav_profile -> {
-                    replaceFragment(ProfileFragment())
+                    binding.viewPagerMain.currentItem = 3
                     Toast.makeText(this, "Membuka Profil", Toast.LENGTH_SHORT).show()
                     true
                 }
                 else -> false
             }
         }
+
+        // Menangani tombol Back saat BookingFragment atau QuickBillingFragment terbuka
+        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                if (supportFragmentManager.backStackEntryCount > 0) {
+                    supportFragmentManager.popBackStack()
+                    binding.onboardingContainer.visibility = View.GONE
+                } else {
+                    isEnabled = false
+                    onBackPressedDispatcher.onBackPressed()
+                }
+            }
+        })
     }
 
-    // Fungsi untuk mengganti Fragment di dalam FrameLayout container
-    private fun replaceFragment(fragment: Fragment) {
+    fun tutupOnBoarding() {
+        binding.onboardingContainer.visibility = View.GONE
+    }
+
+    fun pindahTab(index: Int) {
+        binding.viewPagerMain.currentItem = index
+    }
+
+    fun bukaHalamanSub(fragment: Fragment) {
+        binding.onboardingContainer.visibility = View.VISIBLE
         supportFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container, fragment)
+            .replace(R.id.onboarding_container, fragment)
+            .addToBackStack(null)
             .commit()
     }
 }

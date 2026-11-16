@@ -39,6 +39,7 @@ dependencies {
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.core.ktx)
+    implementation("androidx.viewpager2:viewpager2:1.1.0")
     implementation(libs.material)
     implementation("androidx.fragment:fragment-ktx:1.6.2")
     testImplementation(libs.junit)

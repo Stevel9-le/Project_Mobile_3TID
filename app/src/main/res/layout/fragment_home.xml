@@ -1,146 +1,215 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0B091A">
+    android:background="#0B091A"
+    android:orientation="vertical">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appBar"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar">
+        android:layout_height="?attr/actionBarSize"
+        android:background="#171530"
+        app:title="iCafe Edge - Home"
+        app:titleTextColor="@android:color/white" />
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="#171530"
-            app:title="iCafe Edge - Home"
-            app:titleTextColor="@android:color/white"
-            app:layout_scrollFlags="scroll|enterAlways" />
-
-    </com.google.android.material.appbar.AppBarLayout>
-
-    <androidx.core.widget.NestedScrollView
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:clipToPadding="false"
-        android:paddingVertical="24dp"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        android:padding="16dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
             android:orientation="vertical">
 
+            <!-- CARD BILLING DENGAN BACKGROUND DRAWABLE -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_icafe_gradient"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sisa Billing Main (Klik untuk Top Up)"
+                    android:textColor="#E0E7FF"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/tvBillingTimer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="00:10:00"
+                    android:textColor="#FFFFFF"
+                    android:textSize="34sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="iCAFE EDGE"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="12dp"
+                android:text="Layanan Utama Edge iCafe"
                 android:textColor="#00F2FE"
-                android:textSize="24sp"
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
-            <TextView
-                android:layout_width="wrap_content"
+            <!-- GRID LAYOUT 2 KOLOM -->
+            <GridLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
-                android:text="Client Self-Service Portal"
-                android:textColor="#8F8FA8"
-                android:textSize="13sp" />
+                android:alignmentMode="alignMargins"
+                android:columnCount="2"
+                android:rowCount="2">
 
-            <!-- CARD COMPONENT FITUR 1: BILLING COUNTDOWN TIMER -->
-            <androidx.cardview.widget.CardView
-                android:layout_width="280dp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="24dp"
-                app:cardBackgroundColor="#171530"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="6dp">
+                <!-- Grid Item 1: Booking PC -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btnBooking"
+                    android:layout_width="0dp"
+                    android:layout_height="110dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    app:cardBackgroundColor="#171530"
+                    app:cardCornerRadius="12dp"
+                    app:strokeColor="#28244D"
+                    app:strokeWidth="1dp">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="16dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="12dp">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Sisa Billing Main"
-                        android:textColor="#8F8FA8"
-                        android:textSize="12sp" />
+                        <ImageView
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:src="@android:drawable/ic_menu_myplaces"
+                            app:tint="#00F2FE" />
 
-                    <TextView
-                        android:id="@+id/tvBillingTimer"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:text="00:00:00"
-                        android:textColor="#00F2FE"
-                        android:textSize="26sp"
-                        android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="Booking PC"
+                            android:textColor="#FFFFFF"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
 
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
+                <!-- Grid Item 2: Kantin / Menu (RecyclerView) -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btnKantin"
+                    android:layout_width="0dp"
+                    android:layout_height="110dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    app:cardBackgroundColor="#171530"
+                    app:cardCornerRadius="12dp"
+                    app:strokeColor="#28244D"
+                    app:strokeWidth="1dp">
 
-            <!-- Tombol Booking PC (Compact) -->
-            <Button
-                android:id="@+id/btnBooking"
-                android:layout_width="wrap_content"
-                android:layout_height="42dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="12dp"
-                android:backgroundTint="#00F2FE"
-                android:paddingHorizontal="32dp"
-                android:text="Booking PC"
-                android:textColor="#0B091A"
-                android:textSize="12sp"
-                android:textStyle="bold"
-                app:cornerRadius="8dp" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="12dp">
 
-            <!-- Tombol Makanan dan Minuman (Compact) -->
-            <Button
-                android:id="@+id/btnKantin"
-                android:layout_width="wrap_content"
-                android:layout_height="42dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="12dp"
-                android:backgroundTint="#171530"
-                android:paddingHorizontal="24dp"
-                android:text="Makanan dan Minuman"
-                android:textColor="#FFFFFF"
-                android:textSize="12sp"
-                android:textStyle="bold"
-                app:cornerRadius="8dp"
-                app:strokeColor="#28244D"
-                app:strokeWidth="1dp" />
+                        <ImageView
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:src="@android:drawable/ic_menu_sort_by_size"
+                            app:tint="#10B981" />
 
-            <!-- Tombol Portal Member iCafe (Compact) -->
-            <Button
-                android:id="@+id/btnWebView"
-                android:layout_width="wrap_content"
-                android:layout_height="42dp"
-                android:layout_gravity="center_horizontal"
-                android:backgroundTint="#10B981"
-                android:paddingHorizontal="24dp"
-                android:text="Portal Member iCafe"
-                android:textColor="#FFFFFF"
-                android:textSize="12sp"
-                android:textStyle="bold"
-                app:cornerRadius="8dp"
-                app:icon="@android:drawable/ic_menu_compass"
-                app:iconGravity="textStart"
-                app:iconPadding="6dp"
-                app:iconSize="16dp"
-                app:iconTint="#FFFFFF" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="Menu Kantin"
+                            android:textColor="#FFFFFF"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
 
+                <!-- Grid Item 3: Quick Top Up Billing -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btnQuickBilling"
+                    android:layout_width="0dp"
+                    android:layout_height="110dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    app:cardBackgroundColor="#171530"
+                    app:cardCornerRadius="12dp"
+                    app:strokeColor="#28244D"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+
+                        <ImageView
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:src="@android:drawable/ic_input_add"
+                            app:tint="#F59E0B" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="Top Up Billing"
+                            android:textColor="#FFFFFF"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Grid Item 4: Portal Member -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btnWebView"
+                    android:layout_width="0dp"
+                    android:layout_height="110dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="6dp"
+                    app:cardBackgroundColor="#171530"
+                    app:cardCornerRadius="12dp"
+                    app:strokeColor="#28244D"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+
+                        <ImageView
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:src="@android:drawable/ic_menu_info_details"
+                            app:tint="#EC4899" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="Portal Member"
+                            android:textColor="#FFFFFF"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+            </GridLayout>
         </LinearLayout>
-
-    </androidx.core.widget.NestedScrollView>
-
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </ScrollView>
+</LinearLayout>

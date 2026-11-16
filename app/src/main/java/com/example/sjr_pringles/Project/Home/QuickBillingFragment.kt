@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.setFragmentResult
+import com.example.sjr_pringles.Project.MainActivityProject
 import com.example.sjr_pringles.databinding.FragmentQuickBillingBinding
 
 class QuickBillingFragment : Fragment() {
@@ -63,7 +64,8 @@ class QuickBillingFragment : Fragment() {
                 Toast.LENGTH_SHORT
             ).show()
 
-            // Kembali ke HomeFragment
+            // Tutup container overlay lalu kembali ke HomeFragment
+            (activity as? MainActivityProject)?.tutupOnBoarding()
             parentFragmentManager.popBackStack()
         }
     }

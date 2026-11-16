@@ -6,11 +6,11 @@
     android:layout_height="match_parent"
     android:background="#0B0E1B"
     android:fitsSystemWindows="true"
-    tools:context=".MainActivity">
+    tools:context=".Project.MainActivityProject">
 
-    <!-- Container Utama untuk Fragment -->
-    <FrameLayout
-        android:id="@+id/fragment_container"
+    <!-- Container Utama ViewPager2 (4 Menu Bisa Di-swipe) -->
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPagerMain"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/bottom_navigation" />
@@ -30,4 +30,14 @@
         app:itemTextColor="@color/bottom_nav_text_color"
         app:labelVisibilityMode="labeled"
         app:menu="@menu/bottom_menu_file" />
+
+    <!-- Overlay On-Boarding di Lapisan Paling Atas (elevation 20dp) -->
+    <FrameLayout
+        android:id="@+id/onboarding_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:elevation="20dp"
+        android:focusable="true" />
+
 </RelativeLayout>

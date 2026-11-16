@@ -30,8 +30,11 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="14dp"
             android:hint="Nama Lengkap"
-            app:boxStrokeColor="#2563EB"
-            app:hintTextColor="#8A99AD">
+            android:textColorHint="#94A3B8"
+            app:boxBackgroundColor="#161B33"
+            app:boxStrokeColor="#3B82F6"
+            app:boxStrokeWidth="1.5dp"
+            app:hintTextColor="#00F2FE">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etNama"
@@ -48,8 +51,11 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="14dp"
             android:hint="No. Handphone"
-            app:boxStrokeColor="#2563EB"
-            app:hintTextColor="#8A99AD">
+            android:textColorHint="#94A3B8"
+            app:boxBackgroundColor="#161B33"
+            app:boxStrokeColor="#3B82F6"
+            app:boxStrokeWidth="1.5dp"
+            app:hintTextColor="#00F2FE">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etNoHp"
@@ -67,8 +73,11 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="14dp"
             android:hint="Username"
-            app:boxStrokeColor="#2563EB"
-            app:hintTextColor="#8A99AD">
+            android:textColorHint="#94A3B8"
+            app:boxBackgroundColor="#161B33"
+            app:boxStrokeColor="#3B82F6"
+            app:boxStrokeWidth="1.5dp"
+            app:hintTextColor="#00F2FE">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etUsername"
@@ -85,10 +94,13 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
             android:hint="Password"
-            app:boxStrokeColor="#2563EB"
-            app:hintTextColor="#8A99AD"
+            android:textColorHint="#94A3B8"
+            app:boxBackgroundColor="#161B33"
+            app:boxStrokeColor="#3B82F6"
+            app:boxStrokeWidth="1.5dp"
+            app:hintTextColor="#00F2FE"
             app:passwordToggleEnabled="true"
-            app:passwordToggleTint="#8A99AD">
+            app:passwordToggleTint="#94A3B8">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etPassword"
