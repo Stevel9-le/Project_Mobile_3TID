@@ -134,7 +134,7 @@
                             android:textStyle="bold" />
                     </LinearLayout>
 
-                    <!-- Tombol Submit (Ringkas / Compact) -->
+                    <!-- Tombol Submit -->
                     <Button
                         android:id="@+id/btnSubmitBooking"
                         android:layout_width="wrap_content"
@@ -151,6 +151,18 @@
 
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
+
+            <!-- Daftar Booking dari Supabase (Read / Update / Delete) -->
+            <TextView
+                android:id="@+id/tvRiwayatBooking"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="#171530"
+                android:padding="16dp"
+                android:text="Memuat daftar booking..."
+                android:textColor="#E0E0FF"
+                android:textSize="13sp" />
 
         </LinearLayout>
     </ScrollView>
